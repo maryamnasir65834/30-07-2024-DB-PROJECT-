@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Online Bookstore</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .full-width-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script> <!-- JavaScript file -->
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <h1>My Online Book Store</h1>
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a class="decoration" href="#">Home &#9662;</a>
+                        <div class="dropdown-content">
+                            <a href="#">About Us</a>
+                            <a href="#">Services</a>
+                            <a href="#">Available Books</a>
+                            <a href="#">Customer Reviews</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a class="decoration" href="#">Books &#9662;</a>
+                        <div class="dropdown-content">
+                            <a href="#">Fiction Books</a>
+                            <a href="#">Non-Fiction Books</a>
+                            <a href="#">Story Books</a>
+                            <a href="#">Children's Books</a>
+                            <a href="#">Popular Books</a>
+                        </div>
+                    </li>
+                    <li><a class="decoration" href="#">Contact</a></li>
+                </ul>
+            </div>
+            <input type="text" id="search-bar" placeholder="Search books...">
+        </nav>
+    </header>
+    <main>
+        <section id="featured-books">
+            <h2>Featured Books</h2>
+            <p class="Para">Immerse yourself in a world of literary brilliance with our handpicked selection of featured books. From timeless classics to contemporary masterpieces, each title has been chosen to ignite your imagination and captivate your heart. Whether you’re drawn to gripping thrillers, inspiring biographies, or thought-provoking fiction, our curated collection promises a diverse range of genres and stories to suit every reader's taste. Dive into these exceptional reads and discover new favorites that will transport you to different worlds, evoke deep emotions, and spark meaningful conversations. Let our featured books inspire your next great reading adventure!</p>
+            <div class="slider">
+                <div class="slides">
+                    <!-- Slide 1 -->
+                    <div class="slide">
+                        <div class="featured-book" id="featured-book-1">
+                            <img src="" alt="Featured Book 1" class="featured-image">
+                            <div class="book-info">
+                                <h3 class="book-title"></h3>
+                                <p class="book-author"></p>
+                                <p class="book-price"></p>
+                            </div>
+                        </div>
+                        <div class="featured-book" id="featured-book-2">
+                            <img src="" alt="Featured Book 2" class="featured-image">
+                            <div class="book-info">
+                                <h3 class="book-title"></h3>
+                                <p class="book-author"></p>
+                                <p class="book-price"></p>
+                            </div>
+                        </div>
+                        <div class="featured-book" id="featured-book-3">
+                            <img src="" alt="Featured Book 3" class="featured-image">
+                            <div class="book-info">
+                                <h3 class="book-title"></h3>
+                                <p class="book-author"></p>
+                                <p class="book-price"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <div class="featured-book" id="featured-book-4">
+                            <img src="" alt="Featured Book 4" class="featured-image">
+                            <div class="book-info">
+                                <h3 class="book-title"></h3>
+                                <p class="book-author"></p>
+                                <p class="book-price"></p>
+                            </div>
+                        </div>
+                        <div class="featured-book" id="featured-book-5">
+                            <img src="" alt="Featured Book 5" class="featured-image">
+                            <div class="book-info">
+                                <h3 class="book-title"></h3>
+                                <p class="book-author"></p>
+                                <p class="book-price"></p>
+                            </div>
+                        </div>
+                        <div class="featured-book" id="featured-book-6">
+                            <img src="" alt="Featured Book 6" class="featured-image">
+                            <div class="book-info">
+                                <h3 class="book-title"></h3>
+                                <p class="book-author"></p>
+                                <p class="book-price"></p>
+                            </div>
+                        </div>
+                    </div>
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>   
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p class="Para">Welcome to <a href="#" class="store-link" title="Visit My Online Book Store"><span class="store-name">My Online Book Store</span></a>, where passion for literature meets the convenience of online shopping. Founded with a love for books and a commitment to readers, we aim to provide a diverse selection of titles that cater to every interest and age group. Our mission is to foster a community of book lovers by offering a seamless browsing and shopping experience, personalized recommendations, and exceptional customer service. Whether you're discovering new authors, revisiting beloved classics, or exploring niche genres, <a href="#" class="store-link" title="Visit My Online Book Store"><span class="store-name">My Online Book Store</span></a> is your trusted destination for all things literary. Join us in celebrating the joy of reading, one page at a time.</p>
+        </section>
+        <section id="customer-reviews">
+            <div class="customer-reviews1">
+                <h2>Customer Reviews</h2>
+                <h3>"Our Valuable and Top Customers Reviews"</h3>
+            </div>
+            <!-- Dynamic content will be inserted here -->
+            <div id="dynamic-reviews"></div>
+        </section>
+        <section>
+            <h2>Available Books</h2>
+            <table id="books-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Books will be dynamically added here -->
+                </tbody>
+            </table>
+            <button id="load-more-btn">Load More Books</button>
+        </section>
+        <section>
+            <div class="form-container">
+                <form id="add-book-form">
+                    <h2>Add New Book</h2>
+                    <div class="form-group">
+                        <label for="title">Title <span class="required">*</span></label>
+                        <input type="text" id="title" name="title" required>
+                        <span class="error-message">Please enter the title.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="author">Author <span class="required">*</span></label>
+                        <input type="text" id="author" name="author" required>
+                        <span class="error-message">Please enter the author.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl">Image URL <span class="required">*</span></label>
+                        <input type="text" id="imageUrl" name="imageUrl" required>
+                        <span class="error-message">Please enter the image URL.</span>
+                    </div>
+                    <div class="form-group price-availability-container">
+                        <div class="form-group price-container">
+                            <label for="price">Price <span class="required">*</span></label>
+                            <input type="number" id="price" name="price" step="0.01" required>
+                            <span class="error-message">Please enter the price.</span>
+                        </div>
+                        <div class="form-group availability-container">
+                            <label for="availability">Availability <span class="required">*</span></label>
+                            <input type="text" id="availability" name="availability" required>
+                            <span class="error-message">Please enter the availability status.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description <span class="required">*</span></label>
+                        <textarea id="description" name="description" required></textarea>
+                        <span class="error-message">Please enter the description.</span>
+                    </div>
+                    <button type="submit" class="submit-btn">Add Book</button>
+                </form>           
+                <form id="contact-form">
+                    <h2>Contact Us</h2>
+                    <div class="form-group">
+                        <label for="name">Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required>
+                        <span class="error-message">Please enter your name.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required>
+                        <span class="error-message">Please enter a valid email address.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject <span class="required">*</span></label>
+                        <input type="text" id="subject" name="subject" required>
+                        <span class="error-message">Please enter the subject.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" required></textarea>
+                        <span class="error-message">Please enter your message.</span>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>     
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 My Online Bookstore</p>
+    </footer>
+    <script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+function showSlide(n) {
+    const totalSlides = slides.length;
+    const slideWidth = 100; // Each slide takes up 100% of the container width
+    slides.forEach((slide, index) => {
+        slide.style.transform = `translateX(${-n * slideWidth}%)`;
+    });
+}
+
+function moveSlide(step) {
+    const totalSlides = slides.length;
+    const slidesToShow = 1; // Number of slides shown at a time (one full set)
+    currentSlide += step;
+    if (currentSlide < 0) currentSlide = 0;
+    if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+    showSlide(currentSlide);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    showSlide(currentSlide);
+});
+
+
+
+    </script>
+</body>
+</html>
