@@ -1,0 +1,557 @@
+
+/* Reset and basic styling */
+body {
+    font-family: Arial, sans-serif;                     /* Set default font */
+    background-color: #DDDDDD;                        /* Light gray background */
+    color: #333;                                      /* Dark gray text color */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #003355;                         /* Dark blue background */
+    color: #fff;                                       /* White text color */
+    padding: 10px 0;                                     /* Padding top and bottom */
+    text-align: center;                                  /* Center align text */
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003355;
+    padding: 10px 0;
+    opacity: 1;
+    animation: fadeIn 2s forwards;                      /* Assuming `fadeIn` animation is defined */
+    position: relative;                                 /* Ensure positioning context for absolute children */
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;                                 /* Ensure positioning context for absolute children */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    padding: 10px;
+}
+
+.nav-links a:hover {
+    color: #5998c2;
+}
+
+.decoration {
+    padding: 2px 5px;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #DDDDDD;
+    z-index: 1;
+    min-width: 160px;
+    top: 100%;
+    margin-top: 10px;
+}
+
+.dropdown-content a {
+    color: #3d3939;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background-color: #5998c2;
+    color: #003355;
+    border-radius: 3px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Search bar */
+#search-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;                                              /* Align to the center horizontally */
+    transform: translateX(-50%);                            /* Adjust to center properly */
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#search-bar::placeholder {
+    color: #999;
+}
+
+#search-bar:focus {
+    outline: none;
+    border-color: #555;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Placeholder for animation definition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+/* Heading styles */
+h1 {
+    font-size: 3.5rem;                                   /* Large font size */
+    font-family: 'Times New Roman', sans-serif;          /* Font family */
+    font-weight: bold;                                   /* Bold font weight */
+    text-align: center;                                  /* Center align text */
+    margin-top: 20px;                                    /* Margin top */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);       /* Text shadow */
+    opacity: 0;                                          /* Start with opacity 0 */
+    animation: fadeIn 2s forwards;                       /* Fade in animation */
+}
+
+h2 {
+    font-size: 2.5rem;                                   /* Large font size */
+    color: #003366;                                    /* Dark blue text color */
+    font-weight: bold;                                   /* Bold font weight */
+    padding: 0 5px;                                      /* Padding left and right */
+    border-radius: 3px;                                  /* Rounded corners */
+    text-transform: uppercase;                           /* Uppercase text */
+    border-bottom: 2px solid #003366;                  /* Bottom border */
+    padding-bottom: 2px;                                 /* Padding bottom */
+    letter-spacing: 1px;                                 /* Letter spacing */
+    text-shadow: 1px 1px 2px #000;                     /* Text shadow */
+    text-align: center;                                  /* Center align text */
+    font-family: 'Times New Roman', Times, serif;        /* Font family */
+    font-style: italic;                                  /* Italic font style */
+    opacity: 0;                                          /* Start with opacity 0 */
+    animation: fadeIn 2s forwards;                       /* Fade in animation */
+}
+
+h3 {
+    text-align: center;                                  /* Center align text */
+}
+
+/* Main content styling */
+main {
+    padding: 20px;                                       /* Padding inside */
+}
+
+section {
+    margin: 20px 0;                                      /* Margin top and bottom */
+    padding: 20px;                                       /* Padding inside */
+    background-color: #F0F0F0;                         /* Light gray background */
+    border-radius: 5px;                                  /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);           /* Box shadow */
+}
+
+/* Table styling */
+table {
+    width: 100%;                                         /* Full width */
+    border-collapse: collapse;                           /* Collapse borders */
+    margin: 20px 0;                                      /* Margin top and bottom */
+    background-color: #fff;                            /* White background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);           /* Box shadow */
+    border-radius: 5px;                                  /* Rounded corners */
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;                            /* Border style */
+}
+
+th,
+td {
+    padding: 10px;                                       /* Padding inside */
+    text-align: left;                                    /* Left align text */
+}
+
+/* Set background color for first row in thead */
+thead tr:first-child {
+    background-color: #003355;                         /* Dark blue background */
+    color: #fff;                                       /* White text color */
+}
+
+/* Full-width image styling */
+
+.full-width-image {
+    width: 100%;                                         /* Full width */
+    height: auto;                                        /* Auto height */
+    object-fit: cover;                                   /* Cover image */
+    opacity: 0;                                          /* Start with opacity 0 */
+    animation: zoomIn 1.5s forwards;                     /* Zoom-in animation */
+}
+
+
+/* Style for the section containing the forms */
+
+section {
+    padding: 20px;                                        /* Add padding around the section */
+    background-color: #f9f9f9;                          /* Light background color for contrast */
+    margin-bottom: 30px;                                  /* Add margin at the bottom to ensure space for footer */
+    box-sizing: border-box;                               /* Include padding and border in element's total width and height */
+}
+
+/* Container for the forms */
+
+.form-container {
+    display: flex;                                       /* Enable flexbox */
+    justify-content: space-between;                      /* Space between the forms */
+    gap: 20px;                                           /* Space between the forms */
+    background-image: url('image/2.png');                /* Background image */
+    padding: 20px;                                       /* Ensure padding inside the container */
+    box-sizing: border-box;                              /* Include padding in element's total width and height */
+}
+
+/* Ensure each form takes equal width */
+
+#add-book-form, #contact-form {
+    flex: 1;                                             /* Allow forms to grow and take equal space */
+    max-width: 48%;                                      /* Limit width to allow spacing */
+}
+
+/* Form container styling (applies to both forms) */
+
+#add-book-form, #contact-form {
+    background-color: #ffffff;
+    padding: 20px;                                       /* Padding inside the form */
+    border: 1px solid #ddd;                            /* Light border */
+    border-radius: 8px;                                  /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);          /* Subtle shadow */
+    font-family: Arial, sans-serif;                      /* Font styling */
+}
+
+/* Styling for form headings */
+
+#add-book-form h2, #contact-form h2 {
+    margin-bottom: 20px;                                 /* Space below the heading */
+    font-size: 24px;
+    color: #003355;
+    text-align: center;                                  /* Center-align the heading */
+}
+
+/* Styling for form elements */
+
+.form-group {
+    margin-bottom: 15px;                                 /* Space below each form group */
+}
+
+/* Style for form labels */
+
+.form-group label {
+    display: block;                                      /* Block display for labels */
+    margin-bottom: 5px;                                  /* Space below the label */
+    font-weight: bold;                                   /* Bold font */
+    color: #333;                                       /* Dark text color */
+}
+
+/* Style for text inputs and textareas */
+
+.form-group input[type="text"], 
+.form-group input[type="email"],
+.form-group textarea {
+
+    width: 100%;                                          /* Full width */
+    padding: 10px;                                        /* Padding inside inputs */
+    border: 1px solid #ccc;                             /* Light border */
+    border-radius: 4px;                                   /* Slightly rounded corners */
+    box-sizing: border-box;                               /* Include padding and border in element's total width and height */
+    font-size: 16px; 
+    font-family: Arial, sans-serif;                       /* Font styling */
+}
+
+/* Style for the textarea specifically */
+
+.form-group textarea {
+
+    height: 100px;                                        /* Fixed height */
+    resize: vertical;                                     /* Allow vertical resizing */
+}
+
+/* Style for the submit buttons */
+
+.submit-btn {
+    display: block;                                      /* Block display to take full width */
+    width: 100%;                                         /* Full width */
+    padding: 10px;                                       /* Padding inside the button */
+    background-color: #003355;
+    color: white;                                      /* White text color */
+    border: none;                                        /* No border */
+    border-radius: 4px;                                  /* Rounded corners */
+    font-size: 16px;
+    cursor: pointer;                                     /* Pointer cursor on hover */
+    font-family: Arial, sans-serif;                      /* Font styling */
+    transition: background-color 0.3s ease;              /* Smooth transition */
+}
+
+/* Style for the button on hover */
+
+.submit-btn:hover {
+    background-color: #5998c2; 
+}
+
+/* New CSS for price and availability fields */
+
+.price-availability-container {
+    display: grid;
+    width: 680px;
+    grid-template-columns: 1fr 1fr;                     /* Two equal-width columns */
+    gap: 5px;                                           /* Space between the columns */
+}
+
+/* Additional styling for price and availability containers if needed */
+
+.price-container,
+.availability-container {
+    margin-bottom: 0;                                  /* Remove bottom margin for these containers */
+}
+
+
+/* Style for error messages */
+
+.error-message {
+    color: red;                                       /* Red color for error messages */
+    font-size: 14px;                                    /* Smaller font size */
+    display: none;                                      /* Hidden by default */
+}
+
+/* Style for required field indicator */
+
+.required {
+    color: red;                                      /* Red color for asterisk */
+}
+
+/* Footer styling */
+
+footer {
+    padding: 20px;                                    /* Padding inside the footer */
+    background-color: #003355; 
+    color: white;                                   /* White text color */
+    text-align: center;                               /* Center-align text */
+    position: relative;                               /* Ensure the footer is positioned normally */
+    clear: both;                                      /* Clear any floats */
+    box-sizing: border-box;                           /* Include padding in element's total width and height */
+}
+
+/* Customer reviews styling */
+.customer-reviews1 {
+    margin-top: 5px;                                    /* Margin top */
+    padding-top: 0.25px;                                /* Padding top */
+}
+
+.customer-reviews {
+    margin-top: 20px;                                   /* Margin top */
+    border-top: 1px solid #ddd;                       /* Top border */
+    padding-top: 20px;                                  /* Padding top */
+}
+
+.review {
+    margin-bottom: 20px;                                /* Margin bottom */
+}
+
+.rating {
+    color: #FFD700;                                   /* Gold/yellow star color */
+    font-size: 24px;                                    /* Font size */
+    text-align: center;                                 /* Center align text */
+}
+
+.star {
+    cursor: pointer;                                    /* Pointer cursor */
+}
+
+.review p {
+    margin: 10px 0;                                     /* Margin top and bottom */
+    font-size: 16px;                                    /* Font size */
+    line-height: 1.6;                                   /* Line height */
+}
+
+/* Store name decoration */
+.store-name {
+    font-weight: bold;                                  /* Bold font weight */
+    color: #5998c2;                                   /* Light blue color */
+}
+
+/* Paragraph styling */
+.Para {
+    padding: 2px 5px;                                   /* Padding inside */
+    font-family: sans-serif;                            /* Font family */
+    line-height: 1.6;                                   /* Line spacing */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;                                     /* Start with opacity 0 */
+    }
+    to {
+        opacity: 1;                                     /* End with opacity 1 */
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);                          /* Start with smaller size */
+        opacity: 0;                                     /* Start with opacity 0 */
+    }
+    to {
+        transform: scale(1);                            /* End with normal size */
+        opacity: 1;                                     /* End with opacity 1 */
+    }
+}
+
+/* Links behind "My Online Book Store" text */
+.store-link {
+    position: relative;                                 /* Relative positioning */
+    color: inherit;                                     /* Inherit color */
+    text-decoration: none;                              /* Remove underline */
+}
+
+.store-link:hover .store-name::after {
+    content: " (Visit)";                                /* Additional content */
+    font-size: 0.8em;                                   /* Smaller font size */
+    color: #5998c2;                                   /* Light blue color */
+    margin-left: 5px;                                   /* Margin left */
+}
+
+                            /* slider*/
+/* LOAD MORE BUTTON*/
+
+#load-more-btn
+{
+    width: 20%;                                          /* Half width */
+    padding: 10px 15px;                                  /* Padding inside */
+    background-color: #003355;                         /* Dark blue background */
+    color: white;                                      /* White text color */
+    border: none;                                        /* No border */
+    border-radius: 3px;                                  /* Rounded corners */
+    font-size: 16px;                                     /* Font size */
+    cursor: pointer;
+    display: block;                                      /* Block-level element */
+    margin: 0 auto;                                      /* Center horizontally */
+}
+
+#load-more-btn:hover {
+    background-color: #5998c2;                         /* Light blue hover background */
+}
+
+
+
+/* FEATURED BOOKS SECTION*/
+
+#featured-books {
+    padding: 10px;
+    background-color: #f8f8f8;
+    max-height: 1045px; 
+    overflow: hidden;                                    /* Hide overflow for the slider */
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;                                    /* Hide overflow for the slider */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;                                         /* Ensure it takes up the full width */
+}
+
+.slide {
+    display: flex;
+    flex: 0 0 100%;                                      /* Ensure each slide takes up full width */
+}
+
+.featured-book {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    margin: 0 10px;                                     /* Space between books */
+    flex: 1 0 30%;                                      /* Take up 30% of the container width */
+    box-sizing: border-box;
+}
+
+.featured-image {
+    max-width: 70%; 
+    height: 500px;                                       /* Maintain aspect ratio */
+    margin-bottom: 10px;
+}
+
+.book-info {
+    padding: 10px;
+    text-align: center; 
+}
+
+.book-title {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.book-author {
+    font-size: 1em;
+    color: #666;
+}
+
+.book-price {
+    font-size: 1.2em;
+    color: #000;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
